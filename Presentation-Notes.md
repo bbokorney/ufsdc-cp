@@ -414,7 +414,7 @@ It seems so simple. So what could go wrong here? Well, let's imagine that there 
 
 ```
 Assume the value at $a is 0
-Thread 1 						Thread 2
+Thread 1 							Thread 2
 
 1. lw $tmp1 $a 												# $tmp1 = 0
 2. 									lw $tmp3 $a  			# $tmp3 = 0	
