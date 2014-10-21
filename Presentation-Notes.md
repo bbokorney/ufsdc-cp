@@ -243,7 +243,7 @@ a3
 
 It is important to note that statements from the *same* thread won't be reordered*, but statements from *different* threads can be interleaved in any order.
 
-*This is not entirely true, as compilers will reorder statements in order to speed up execution of programs. This happens in sequential programs as well. But of course, the compiler will only reorder statements which don't depend on each other, so you can still reason about code with the assumption that statements actually execute in the order you define them.
+> *This is not entirely true, as compilers will reorder statements in order to speed up execution of programs. This happens in sequential programs as well. But of course, the compiler will only reorder statements which don't depend on each other, so you can still reason about code with the assumption that statements actually execute in the order you define them.
 
 To explore this idea of statements being interleaved, let's move on to our next example.
 
