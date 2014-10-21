@@ -298,9 +298,10 @@ that thread 0 executed each iteration of its own for loop sequentially. The same
 A quick aside: notice that we're using a loop counter of `i` in both the outer and inner for loop. How is this allowed? When referencing a variable inside the scope of an anonymous class, that variable references the version of that variable in the "closest" scope. In this case, because we defined `i` inside of our anonymous class, that is the version of `i` we're using in the inner for loop. In the previous example, when we referenced `currentNum`, the compiler first looked in the scope of the anonymous class for the declaration of that variable. It could not find it there, and so then moved to the next closest scope, which was that of the for loop. There it found the declaration of `currentNum`, and thus that is the variable we are referencing inside of our `Runnable`.
 
 ## Example 4 - The Dangers of Non-Determinism
+
 This whole concept that programs can execute in a non-deterministic manner might be off-putting to you, and it should. All of the old techniques and guarantees we had when dealing with sequential programs is gone. And this ends up having some servious implications on the *correctness* of our programs. Let's look at our next example.
 
-``java
+```java
 class NonWaitingUnsafeCounter {
 	
 	static int counter;
@@ -413,7 +414,7 @@ It seems so simple. So what could go wrong here? Well, let's imagine that there 
 
 ```
 Assume the value at $a is 0
-Thread 1 						Thread 2
+Thread 1 							Thread 2
 
 1. lw $tmp1 $a 												# $tmp1 = 0
 2. 									lw $tmp3 $a  			# $tmp3 = 0	
